@@ -51,19 +51,19 @@ CREATE TABLE IF NOT EXISTS Game (
     CONSTRAINT fk_game_home_team
     FOREIGN KEY (home_team_id)
     REFERENCES Team(team_id)
-    ON UPDATE CASCADE
+    ON UPDATE RESTRICT
     ON DELETE RESTRICT,
 
     CONSTRAINT fk_game_away_team
     FOREIGN KEY (away_team_id)
     REFERENCES Team(team_id)
-    ON UPDATE CASCADE
+    ON UPDATE RESTRICT
     ON DELETE RESTRICT,
 
     CONSTRAINT fk_game_stadium
     FOREIGN KEY (stadium_id)
     REFERENCES Stadium(stadium_id)
-    ON UPDATE CASCADE
+    ON UPDATE RESTRICT
     ON DELETE RESTRICT,
 
     CONSTRAINT chk_different_teams
