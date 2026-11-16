@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLB Stats Central</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>MLB Stats Central</h1>
+    <p>2026 Season Tracker</p>
+
+    <nav>
+        <a href="/">Players</a>
+        <a href="/teams.html">Teams</a>
+        <a href="/games.html">Games</a>
+    </nav>
+</header>
+
+<main>
+    <section class="welcome">
+        <h2>Player Statistics</h2>
+        <p>Browse players from our mock baseball database.</p>
+    </section>
+
+    <section class="players-section">
+        <h2>All Players</h2>
+
+        <p id="player-count">Loading players...</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Player ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Position</th>
+                    <th>Jersey Number</th>
+                    <th>Team ID</th>
+                </tr>
+                </thead>
+                <tbody id="players-table">
+                <tr>
+                    <td colspan="6">Loading players...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="error-message"></p>
+    </section>
+</main>
+
+<footer>
+    <p>MLB Stats Central | Software Engineering Project</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
