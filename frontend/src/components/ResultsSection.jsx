@@ -1,10 +1,11 @@
-export default function ResultsSection({ title, count, countId, error, children }) {
+export default function ResultsSection({ title, count, countId, error, filters, children }) {
   return (
-    <section className="players-section">
+    <section className="results-section">
       <h2>{title}</h2>
-      <p id={countId}>{count}</p>
+      {filters}
+      {count && <p className="results-count" id={countId} role="status">{count}</p>}
       {children}
-      <p id="error-message">{error}</p>
+      {error && <p className="error-message" role="alert">{error}</p>}
     </section>
   );
 }

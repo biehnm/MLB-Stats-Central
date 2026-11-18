@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-      <p>MLB Stats Central | Software Engineering Project</p>
+      <p>CSCI 3320 project by Mason Biehn and Dillon Fayas · Sample season data</p>
     </footer>
   );
 }

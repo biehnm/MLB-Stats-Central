@@ -7,13 +7,14 @@ import TeamsPage from './pages/TeamsPage.jsx';
 
 const pages = {
   '/': { Page: PlayersPage, title: 'MLB Stats Central' },
-  '/index.html': { Page: PlayersPage, title: 'MLB Stats Central' },
   '/teams.html': { Page: TeamsPage, title: 'MLB Stats Central - Teams' },
   '/games.html': { Page: GamesPage, title: 'MLB Stats Central - Games' },
 };
 
 export default function App() {
-  const { Page, title } = pages[window.location.pathname] ?? pages['/'];
+  const path = window.location.pathname;
+  const activePath = Object.hasOwn(pages, path) ? path : '/';
+  const { Page, title } = pages[activePath];
 
   useEffect(() => {
     document.title = title;
@@ -21,7 +22,7 @@ export default function App() {
 
   return (
     <>
-      <Header />
+      <Header activePath={activePath} />
       <main>
         <Page />
       </main>

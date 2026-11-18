@@ -6,17 +6,16 @@ async function getCollection(resource, signal) {
   return response.json();
 }
 
-export const getPlayers = signal => getCollection('players', signal);
 export const getTeams = signal => getCollection('teams', signal);
 
-export async function getGamesWithTeams(signal) {
-  const [games, teams] = await Promise.all([
-    getCollection('games', signal),
+async function getCollectionWithTeams(resource, signal) {
+  const [rows, teams] = await Promise.all([
+    getCollection(resource, signal),
     getTeams(signal),
   ]);
 
-  return {
-    games,
-    teamNames: new Map(teams.map(team => [team.teamId, team.teamName])),
-  };
+  return { rows, teams };
 }
+
+export const getPlayersWithTeams = signal => getCollectionWithTeams('players', signal);
+export const getGamesWithTeams = signal => getCollectionWithTeams('games', signal);

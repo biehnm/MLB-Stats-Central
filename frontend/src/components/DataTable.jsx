@@ -4,7 +4,7 @@ export default function DataTable({ columns, bodyId, message, children }) {
       <table>
         <thead>
           <tr>
-            {columns.map(column => <th key={column}>{column}</th>)}
+            {columns.map(column => <th key={column} scope="col">{column}</th>)}
           </tr>
         </thead>
         <tbody id={bodyId}>
